@@ -29,9 +29,23 @@ app.get("/products", (request, response) => {
 
 app.get("/produts/:id", (request, response) => {
   const { id } = request.params;
-  const product = products.find(product.id === id);
+  const product = products.find((product) => product.id === id);
   return response.json(product);
-  
+
 })
+app.get("/produts/:id", (request, response) => {
+  const { id } = request.params;
+  const { name, price } = request.body;
+
+  const productIndex = products.findIndex((product) => product.id === id);
+  products[productIndex] = {
+    ...products[productIndex],
+    name,
+    price,
+  };
+
+  return response.json({ message: "Produto alterado com sucesso" });
+
+});
 
 app.listen(4002, () => console.log("Servidor está rodando na porta 4002"))

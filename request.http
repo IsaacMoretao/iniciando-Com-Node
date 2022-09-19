@@ -2,13 +2,24 @@ POST http://localhost:4002/products
 content-type: application/json
 
 {
-  "name": "magan fox",
-  "price": 10
+  "name": "pequeno",
+  "price": 20
 }
 
 ###
 
 GET http://localhost:4002/products
 
+
 ###
-GET http://localhost:4002/products/a3e90325-779d-484d-8d01-6d390690f686
+
+GET http://localhost:4002/products/6ddc13e9-9650-4232-8512-cf7ac4a9489b
+
+###
+PUT http://localhost:4002/products/9cac3c54-6626-474e-8a35-e24e341abccf
+content-type: application/json
+
+{
+  "name": "maio",
+  "price": 157654356
+}
